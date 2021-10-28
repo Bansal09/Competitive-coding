@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        int t;
+        Scanner sc=new Scanner(System.in);
+        t=sc.nextInt();
+        int m;
+        for(m=1;m<=t;m++)
+        {
+            int r;
+            r=sc.nextInt();
+            int i,j,s,pos=-1;
+            int a[]=new int[r];
+            for(i=0;i<r;i++)
+            {
+                a[i]=sc.nextInt();
+            }
+            int min=100000;
+            for(i=0;i<r;i++)
+            {
+                s=0;
+                for(j=0;j<r;j++)
+                {
+                    s+=(int)Math.abs(a[i]-a[j]);
+                }
+                if(min>s)
+                {
+                     min=s;
+                    pos=a[i];
+                } 
+                else if(min==s)
+                    pos=(int)Math.min(pos,a[i]);
+            }
+            System.out.println(pos);
+        }
+    }
+}
