@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        int n,k,s,a,b;
+        while(t>0){
+             n=sc.nextInt();
+             k=sc.nextInt();
+             s=n;
+            while(n>=k){
+                 a=n/k;
+                 b=n%k;
+                 s+=a;
+                 n=a+b;
+            }
+            System.out.println(s);
+            t--;
+        }
+    }
+}
